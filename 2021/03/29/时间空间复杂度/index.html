@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    渲染流程 |  Hexo
+    时间空间复杂度 |  Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -40,7 +40,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-渲染流程"
+  id="post-时间空间复杂度"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -51,18 +51,18 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  渲染流程
+  时间空间复杂度
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/03/25/%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B/" class="article-date">
-  <time datetime="2021-03-25T06:31:39.000Z" itemprop="datePublished">2021-03-25</time>
+      <a href="/2021/03/29/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="article-date">
+  <time datetime="2021-03-29T05:21:35.000Z" itemprop="datePublished">2021-03-29</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构,算法</a>
   </div>
   
 <div class="word_count">
@@ -70,7 +70,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">833</span>
+            <span class="post-count">697</span>
         </span>
     </span>
 
@@ -79,7 +79,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">2 min</span>
+            <span class="post-count">3 min</span>
         </span>
     </span>
 </div>
@@ -94,67 +94,33 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>构建 DOM -&gt; 样式计算 -&gt; 布局阶段 -&gt; 分层 -&gt; 图层绘制 -&gt; 分块 -&gt; 光栅化 -&gt; 合成</p>
+  <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><h4 id="如何分析一段代码的时间复杂度"><a href="#如何分析一段代码的时间复杂度" class="headerlink" title="如何分析一段代码的时间复杂度"></a>如何分析一段代码的时间复杂度</h4><ol>
+<li><p>只关注循环执行次数最多的一段代码 （忽略常量、低阶、系数）</p>
+</li>
+<li><p>加法法则：总复杂度等于量级最大的那段代码的复杂度<br><code>如果 T1(n)=O(f(n))，T2(n)=O(g(n))；那么 T(n)=T1(n)+T2(n)=max(O(f(n)), O(g(n))) = O(max(f(n), g(n))).</code></p>
+</li>
+<li><p>乘法法则：嵌套代码的复杂度等于嵌套内外的代码复杂度的乘积<br><code>如果 T1(n)=O(f(n))，T2(n)=O(g(n))；那么 T(n)=T1(n)*T2(n)=O(f(n))*O(g(n))=O(f(n) * g(n)).</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int cal(int n) &#123;</span><br><span class="line">int ret &#x3D; 0;</span><br><span class="line">int i &#x3D; 1;</span><br><span class="line">for (; i &lt; n; ++i) &#123;</span><br><span class="line">    ret &#x3D; ret + f(i);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int f(int n) &#123;</span><br><span class="line">int sum &#x3D; 0;</span><br><span class="line">int i &#x3D; 1;</span><br><span class="line">for (; i &lt; n; ++i) &#123;</span><br><span class="line">    sum &#x3D; sum + i;</span><br><span class="line">&#125;</span><br><span class="line">return sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分析: 单独看 cal() 函数。假设 f() 只是一个普通的操作，那第 4 ～ 6 行的时间复杂度就是，T1(n) = O(n)。但 f() 函数本身不是一个简单的操作，它的时间复杂度是 T2(n) = O(n)，所以，整个 cal() 函数的时间复杂度就是，T(n) = T1(n) * T2(n) = O(n*n) = O(n2)。</p>
+</li>
+</ol>
 <span id="more"></span>
 
-<p>重点在于关注每个阶段</p>
+<h4 id="常见时间复杂度分析"><a href="#常见时间复杂度分析" class="headerlink" title="常见时间复杂度分析"></a>常见时间复杂度分析</h4><p><img src="https://static001.geekbang.org/resource/image/37/0a/3723793cc5c810e9d5b06bc95325bf0a.jpg" alt="alt"></p>
 <ol>
-<li>输入内容</li>
-<li>处理过程</li>
-<li>输出内容</li>
-</ol>
-<h4 id="构建-DOM-树"><a href="#构建-DOM-树" class="headerlink" title="构建 DOM 树"></a>构建 DOM 树</h4><ul>
-<li>输入：一段 HTML 文件</li>
-<li>处理：HTML 解析器解析</li>
-<li>输出：树状结构的 DOM</li>
-</ul>
-<h4 id="样式计算"><a href="#样式计算" class="headerlink" title="样式计算"></a>样式计算</h4><p>浏览器也是无法直接理解这些纯文本的 CSS 样式</p>
-<ul>
-<li><p>输入：三种 CSS 样式来源(1. 通过 link 引用的外部 CSS 文件; 2.<code>&lt;style&gt;</code>标记内的 CSS; 3.元素的 style 属性内嵌的 CSS)</p>
+<li><p>O(1)<br>一般情况下，只要算法中不存在循环语句、递归语句，即使有成千上万行的代码，其时间复杂度也是 Ο(1)。</p>
 </li>
-<li><p>处理:</p>
-<ol>
-<li> 将 CSS 转换成浏览器能够理解的结构 styleSheets</li>
-<li> 转换样式表中的属性值，使其标准化</li>
-<li> 计算 DOM 树中每个节点的样式（CSS 的继承规则和层叠规则）</li>
-</ol>
-</li>
-<li><p>输出：每个 DOM 节点的样式，并保存在 ComputedStyle 的结构中</p>
-</li>
-</ul>
-<h4 id="布局阶段-计算出-DOM-树中可见元素的几何位置"><a href="#布局阶段-计算出-DOM-树中可见元素的几何位置" class="headerlink" title="布局阶段(计算出 DOM 树中可见元素的几何位置)"></a>布局阶段(计算出 DOM 树中可见元素的几何位置)</h4><ul>
-<li>输入：布局树</li>
-<li>处理：1.创建布局树 2.计算布局树</li>
-<li>输出：布局树 (layoutTree)</li>
-</ul>
-<h4 id="分层-layerTree"><a href="#分层-layerTree" class="headerlink" title="分层(layerTree)"></a>分层(layerTree)</h4><p>为什么要分层？</p>
-<p>因为页面中有很多复杂的效果，如一些复杂的 3D 变换、页面滚动，或者使用 z-indexing 做 z 轴排序等，为了更加方便地实现这些效果，渲染引擎还需要为特定的节点生成专用的图层，并生成一棵对应的图层树</p>
-<h4 id="图层绘制"><a href="#图层绘制" class="headerlink" title="图层绘制"></a>图层绘制</h4><ul>
-<li>输入: layoutTree</li>
-<li>处理:</li>
-<li>输出: 绘制列表</li>
-</ul>
-<h4 id="栅格化-raster"><a href="#栅格化-raster" class="headerlink" title="栅格化(raster)"></a>栅格化(raster)</h4><ul>
-<li>输入：绘制列表</li>
-<li>处理：合成线程将图层-&gt;图块-&gt;生成位图(由栅格化完成，使用 GPU 加速)-&gt;保存在 GPU 内存</li>
-</ul>
-<h4 id="合成和显示"><a href="#合成和显示" class="headerlink" title="合成和显示"></a>合成和显示</h4><ul>
-<li>合成线程生成一个绘制图块的命令—“DrawQuad”</li>
-<li>生成页面</li>
-<li>显示到显示器</li>
-</ul>
-<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><ol>
-<li><p>更新了元素的几何位置（重排）</p>
-<p>通过 JavaScript 或者 CSS 修改元素的几何位置属性，例如改变元素的宽度、高度等，那么浏览器会触发重新布局，解析之后的一系列子阶段，这个过程就叫重排。无疑，重排需要更新完整的渲染流水线，所以开销也是最大的。</p>
-</li>
-<li><p>更新元素的绘制属性（重绘）</p>
-<p>如果修改了元素的背景颜色，那么布局阶段将不会被执行，因为并没有引起几何位置的变换，所以就直接进入了绘制阶段，然后执行之后的一系列子阶段，这个过程就叫重绘。相较于重排操作，重绘省去了布局和分层阶段，所以执行效率会比重排操作要高一些。</p>
-</li>
-<li><p>直接合成阶段<br>更改一个既不要布局也不要绘制的属性，会发生什么变化呢？渲染引擎将跳过布局和绘制，只执行后续的合成操作，我们把这个过程叫做合成。</p>
-<p>使用 CSS 的 transform 来实现动画效果，这可以避开重排和重绘阶段，直接在非主线程上执行合成动画操作。这样的效率是最高的，因为是在非主线程上合成，并没有占用主线程的资源，另外也避开了布局和绘制两个子阶段，所以相对于重绘和重排，合成能大大提升绘制效率。</p>
+<li><p>O(logn)、O(nlogn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i&#x3D;1;</span><br><span class="line">while (i &lt;&#x3D; n)  &#123;</span><br><span class="line">i &#x3D; i * 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>O(m+n)、O(m*n)<br>代码的复杂度由两个数据的规模决定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int cal(int m, int n) &#123;</span><br><span class="line">int sum_1 &#x3D; 0;</span><br><span class="line">int i &#x3D; 1;</span><br><span class="line">for (; i &lt; m; ++i) &#123;</span><br><span class="line">    sum_1 &#x3D; sum_1 + i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int sum_2 &#x3D; 0;</span><br><span class="line">int j &#x3D; 1;</span><br><span class="line">for (; j &lt; n; ++j) &#123;</span><br><span class="line">    sum_2 &#x3D; sum_2 + j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return sum_1 + sum_2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分析：从代码中可以看出，m 和 n 是表示两个数据规模。我们无法事先评估 m 和 n 谁的量级大，所以我们在表示复杂度的时候，就不能简单地利用加法法则，省略掉其中一个。所以，上面代码的时间复杂度就是 O(m+n)。针对这种情况，原来的加法法则就不正确了，我们需要将加法规则改为：T1(m) + T2(n) = O(f(m) + g(n))。但是乘法法则继续有效：T1(m)*T2(n) = O(f(m) * f(n))。</p>
 </li>
 </ol>
- 
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>O(1)、O(n)、O(n2 )，像 O(logn)、O(nlogn) 这样的对数阶复杂度平时都用不到。而且，空间复杂度分析比时间复杂度分析要简单很多。所以，对于空间复杂度，掌握刚我说的这些内容已经足够了。</p>
+<h3 id="最好情况时间复杂度"><a href="#最好情况时间复杂度" class="headerlink" title="最好情况时间复杂度"></a>最好情况时间复杂度</h3><h3 id="最坏情况时间复杂度"><a href="#最坏情况时间复杂度" class="headerlink" title="最坏情况时间复杂度"></a>最坏情况时间复杂度</h3><h3 id="平均情况时间复杂度"><a href="#平均情况时间复杂度" class="headerlink" title="平均情况时间复杂度"></a>平均情况时间复杂度</h3><h3 id="均摊时间复杂度"><a href="#均摊时间复杂度" class="headerlink" title="均摊时间复杂度"></a>均摊时间复杂度</h3> 
       <!-- reward -->
       
     </div>
@@ -206,7 +172,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://joyee.github.io/2021/03/25/%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://joyee.github.io/2021/03/29/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -217,19 +183,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/03/29/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="article-nav-link">
+      <a href="/2021/03/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            时间空间复杂度
+            数据结构
           
         </div>
       </a>
     
     
-      <a href="/2021/03/25/%E5%AF%BC%E8%88%AA%E6%B5%81%E7%A8%8B%EF%BC%9A%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%EF%BC%8C%E8%BF%99%E4%B8%AD%E9%97%B4%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/" class="article-nav-link">
+      <a href="/2021/03/25/%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">导航流程：从输入URL到页面展示，这中间发生了什么？</div>
+        <div class="article-nav-title">渲染流程</div>
       </a>
     
   </nav>
