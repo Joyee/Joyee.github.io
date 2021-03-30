@@ -99,6 +99,104 @@
     
     
     <article
+  id="post-JavaScript专题-柯里化"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/"
+    >JavaScript专题-柯里化</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/" class="article-date">
+  <time datetime="2021-03-30T06:26:54.000Z" itemprop="datePublished">2021-03-30</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>柯里化(Currying)是把接受多个参数的函数变成接受一个单一参数（最初函数的第一个参数）的函数，并且接受余下的参数且返回结果的新函数的技术。</p> 
+      <a class="article-more-link" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-JavaScript专题-异步循环打印"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0/"
+    >JavaScript专题-异步循环打印</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0/" class="article-date">
+  <time datetime="2021-03-30T05:26:40.000Z" itemprop="datePublished">2021-03-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var sleep &#x3D; function (time, i) &#123;</span><br><span class="line">    return new Promise(function (resolve, reject) &#123;</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">            resolve(i)</span><br><span class="line">        &#125;, time)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var start &#x3D; async function () &#123;</span><br><span class="line">    for (var i &#x3D; 0; i &lt; 6; i++) &#123;</span><br><span class="line">        let result &#x3D; await sleep(1000, i)</span><br><span class="line">        console.log(result)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">start()</span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-JavaScript专题-手写call、apply、bind"
   class="article article-type-post"
   itemscope
