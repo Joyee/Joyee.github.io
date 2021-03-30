@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    JavaScript专题-柯里化 |  Hexo
+    JavaScript专题-防抖和节流 |  Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -40,7 +40,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-JavaScript专题-柯里化"
+  id="post-JavaScript专题-防抖和节流"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -51,15 +51,15 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  JavaScript专题-柯里化
+  JavaScript专题-防抖和节流
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/" class="article-date">
-  <time datetime="2021-03-30T06:26:54.000Z" itemprop="datePublished">2021-03-30</time>
+      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" class="article-date">
+  <time datetime="2021-03-30T08:52:51.000Z" itemprop="datePublished">2021-03-30</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
@@ -70,7 +70,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">990</span>
+            <span class="post-count">552</span>
         </span>
     </span>
 
@@ -79,7 +79,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">4 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
@@ -94,33 +94,30 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>柯里化(Currying)是把接受多个参数的函数变成接受一个单一参数（最初函数的第一个参数）的函数，并且接受余下的参数且返回结果的新函数的技术。</p>
-<span id="more"></span>
-
-<h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><ol>
-<li><p>动态创建函数</p>
-<p>兼容现代浏览器以及 IE 浏览器的事件添加方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 监听方法判断</span><br><span class="line">&#x2F;&#x2F; addEventListener主流浏览器的方法</span><br><span class="line">&#x2F;&#x2F; attachEventListener IE浏览器的方法</span><br><span class="line">const whichEvent &#x3D; (function () &#123;</span><br><span class="line">if (window.addEventListener) &#123;</span><br><span class="line">    &#x2F;&#x2F; element:表示哪个元素需要添加事件监听</span><br><span class="line">    &#x2F;&#x2F; type:元素需要添加什么类型的事件</span><br><span class="line">    &#x2F;&#x2F; listener:执行的回调函数</span><br><span class="line">    &#x2F;&#x2F; userCapture:要进行事件冒泡或者事件捕获的选择</span><br><span class="line">    return function (element, type, listener, userCapture) &#123;</span><br><span class="line">    element.addEventListener(</span><br><span class="line">        type,</span><br><span class="line">        function (e) &#123;</span><br><span class="line">        listener.call(element, e)</span><br><span class="line">        &#125;,</span><br><span class="line">        userCapture</span><br><span class="line">    )</span><br><span class="line">    &#125;</span><br><span class="line">&#125; else if (window.attachEvent) &#123;</span><br><span class="line">    return function (element, type, handler) &#123;</span><br><span class="line">    element.attachEvent(&#39;on&#39; + type, function (e) &#123;</span><br><span class="line">        handler.call(element, e)</span><br><span class="line">    &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></li>
-<li><p>延迟计算</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const add &#x3D; (...args) &#x3D;&gt; args.reduce((a, b) &#x3D;&gt; a + b)</span><br><span class="line">&#x2F;&#x2F; 简化写法</span><br><span class="line">function currying(func) &#123;</span><br><span class="line">    const args &#x3D; []</span><br><span class="line">    return function result(...rest) &#123;</span><br><span class="line">        if (rest.length &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">            return func(...args)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            args.push(...rest)</span><br><span class="line">            return result</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const sum &#x3D; currying(add);</span><br><span class="line"> sum(1,2)(3); &#x2F;&#x2F; 未真正求值</span><br><span class="line"> sum(4); 		 &#x2F;&#x2F; 未真正求值</span><br><span class="line"> sum(); 			 &#x2F;&#x2F; 输出 10</span><br></pre></td></tr></table></figure>
-
-<p>思想：用闭包把传入参数保存起来，当传入参数的数量足够执行函数时，就开始执行函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">add(1)(2)(3) &#x3D; 6</span><br><span class="line">add(1, 2, 3)(4) &#x3D; 10</span><br><span class="line">add(1)(2)(3)(4)(5) &#x3D; 15</span><br><span class="line"></span><br><span class="line">function add () &#123;</span><br><span class="line">    var args &#x3D; Array.prototype.slice.call(arguments)</span><br><span class="line"></span><br><span class="line">    var inner &#x3D; function () &#123;</span><br><span class="line">        args.push(...arguments)</span><br><span class="line">        return inner</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    inner.toString &#x3D; function () &#123;</span><br><span class="line">        return args.reduce(function (prev, cur) &#123;</span><br><span class="line">            return prev + cur</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return inner</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>分析：需要做到传入参数的时候不能进行限定，也不能丢失传入的参数，什么时候传入都可以，现在传入的参数可以为后面一起进行使用。</p>
-</li>
-<li><p>参数复用</p>
-<p><code>toString()</code>可以获取每个对象的类型。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function isArray(obj) &#123;</span><br><span class="line"> return Object.prototype.toString.call(obj) &#x3D;&#x3D;&#x3D; &#39;[object Array]&#39;;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> function isNumber(obj) &#123;</span><br><span class="line">     return Object.prototype.toString.call(obj) &#x3D;&#x3D;&#x3D; &#39;[object Number]&#39;;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> function isString(obj) &#123;</span><br><span class="line">     return Object.prototype.toString.call(obj) &#x3D;&#x3D;&#x3D; &#39;[object String]&#39;;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F; Test</span><br><span class="line"> isArray([1, 2, 3]); &#x2F;&#x2F; true</span><br><span class="line"> isNumber(123); &#x2F;&#x2F; true</span><br><span class="line"> isString(&#39;123&#39;); &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
-
-<p>使用 bind 来扩展，优点是可以直接使用改造后的 toStr。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const toStr &#x3D; Function.prototype.call.bind(Object.prototype.toString);</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F; 改造前</span><br><span class="line"> [1, 2, 3].toString(); &#x2F;&#x2F; &quot;1,2,3&quot;</span><br><span class="line"> &#39;123&#39;.toString(); &#x2F;&#x2F; &quot;123&quot;</span><br><span class="line"> 123.toString(); &#x2F;&#x2F; SyntaxError: Invalid or unexpected token</span><br><span class="line"> Object(123).toString(); &#x2F;&#x2F; &quot;123&quot;</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F; 改造后</span><br><span class="line"> toStr([1, 2, 3]); 	&#x2F;&#x2F; &quot;[object Array]&quot;</span><br><span class="line"> toStr(&#39;123&#39;); 		&#x2F;&#x2F; &quot;[object String]&quot;</span><br><span class="line"> toStr(123); 		&#x2F;&#x2F; &quot;[object Number]&quot;</span><br><span class="line"> toStr(Object(123)); &#x2F;&#x2F; &quot;[object Number]&quot;</span><br></pre></td></tr></table></figure></li>
+  <h2 id="防抖-debounce"><a href="#防抖-debounce" class="headerlink" title="防抖(debounce)"></a>防抖(debounce)</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>不管事件触发频率多高，一定在事件触发 n 秒后才执行，如果在一个事件触发的 n 秒内又触发了这个事件，就以新的事件的时间为准，n 秒后才执行。总之，触发完事件 n 秒内不再触发事件，n 秒后再执行。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>窗口大小变化，调整样式<br><code>window.addEventListener(&#39;resize&#39;, debounce(handleResize, 200))</code></li>
+<li>搜索框，输入后 1000ms 搜索<br><code>debounce(fetchSelectData, 300)</code></li>
+<li>表单验证，输入 1000ms 后验证<br><code>debounce(validator, 1000)</code></li>
 </ol>
-<h3 id="实现-curring-函数"><a href="#实现-curring-函数" class="headerlink" title="实现 curring 函数"></a>实现 curring 函数</h3><p>实现原理就是「用闭包把传入参数保存起来，当传入参数的数量足够执行函数时，就开始执行函数」</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function currying(fn, length) &#123;</span><br><span class="line">    &#x2F;&#x2F; 1. 第一次调用获取函数fn参数的长度，后续调用获取fn剩余参数的长度</span><br><span class="line">    length &#x3D; length || fn.length</span><br><span class="line">    &#x2F;&#x2F; 2. curring包裹之后返回一个新函数，接收参数为...args</span><br><span class="line">    return function (...args) &#123;</span><br><span class="line">        return args.length &gt;&#x3D; length &#x2F;&#x2F; 3. 新函数接收的参数长度是否大于等于fn剩余参数需要接收的长度</span><br><span class="line">        ? fn.apply(this, args) &#x2F;&#x2F; 4. 满足要求，执行fn函数，传入新函数的参数</span><br><span class="line">        : curring(fn.bind(this, ...args), length - args.length) &#x2F;&#x2F; 5.不满足要求，递归currying函数，新的fn为bind返回的新函数(bind绑定了...args参数，未执行)，新的length为fn剩余参数的长度</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function debounce(fn, time, flag) &#123;</span><br><span class="line">  var timer &#x3D; null</span><br><span class="line">  return function (...args) &#123;</span><br><span class="line">    clearTimeout(timer)</span><br><span class="line">    &#x2F;&#x2F; 当定时器变量timer为空时，说明是第一次执行，立即执行</span><br><span class="line">    if (flag &amp;&amp; !timer) &#123;</span><br><span class="line">      fn.apply(this, args)</span><br><span class="line">    &#125;</span><br><span class="line">    timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">      fn.apply(this, args)</span><br><span class="line">    &#125;, time);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>柯里化是将 f(a,b,c) 可以被以 f(a)(b)(c) 的形式被调用的转化。JavaScript 实现版本通常保留函数被正常调用和在参数数量不够的情况下返回偏函数这两个特性。</p>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a target="_blank" rel="noopener" href="https://github.com/yygmind/blog/issues/37">深入高阶函数应用之柯里化</a></p>
+<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>不管事件触发频率多高，只在单位时间内执行一次。</p>
+<h4 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h4><ol>
+<li>window.onresize()事件</li>
+<li>mousemove 事件</li>
+<li>上传进度</li>
+</ol>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><ol>
+<li><p>方案一：使用时间戳<br>第一次事件肯定触发，最后一次不会触发</p>
+<p>用时间戳判断是否已达到执行时间，记录上次执行的时间戳，然后每次触发事件执行回调，回调中判断当前时间戳距离上次执行时间戳的间隔是否已达到时间差，如果是则执行，并更新上次执行的时间戳，如此循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const throttle &#x3D; (fn, wait) &#x3D;&gt; &#123;</span><br><span class="line">    let previous &#x3D; 0</span><br><span class="line">    return function (...args) &#123;</span><br><span class="line">        let now &#x3D; +new Date()</span><br><span class="line">        if (now - previous &gt; wait) &#123;</span><br><span class="line">            previous &#x3D; now</span><br><span class="line">            fn.apply(this, args)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>方案二：使用定时器<br>第一次事件不会触发，最后一次一定触发</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function throttle(event, time) &#123;</span><br><span class="line"> let timer &#x3D; null</span><br><span class="line"> return function (...args) &#123;</span><br><span class="line">     if (!timer) &#123;</span><br><span class="line">         timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">             timer &#x3D; null</span><br><span class="line">             event.apply(this, args)</span><br><span class="line">         &#125;, time)</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>方案三：结合版</p>
+<p>定时器和时间戳的结合版，也相当于节流和防抖的结合版，第一次和最后一次都会触发</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function throttle(event, time) &#123;</span><br><span class="line">   let pre &#x3D; 0;</span><br><span class="line">   let timer &#x3D; null;</span><br><span class="line">   return function (...args) &#123;</span><br><span class="line">     if (Date.now() - pre &gt; time) &#123;</span><br><span class="line">       clearTimeout(timer);</span><br><span class="line">       timer &#x3D; null;</span><br><span class="line">       pre &#x3D; Date.now();</span><br><span class="line">       event.apply(this, args);</span><br><span class="line">     &#125; else if (!timer) &#123;</span><br><span class="line">       timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">         event.apply(this, args);</span><br><span class="line">       &#125;, time);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
  
       <!-- reward -->
       
@@ -173,7 +170,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://joyee.github.io/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://joyee.github.io/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -184,19 +181,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            JavaScript专题-防抖和节流
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0/" class="article-nav-link">
+      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">JavaScript专题-异步循环打印</div>
+        <div class="article-nav-title">JavaScript专题-柯里化</div>
       </a>
     
   </nav>

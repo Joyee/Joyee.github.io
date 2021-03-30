@@ -99,6 +99,79 @@
     
     
     <article
+  id="post-JavaScript专题-防抖和节流"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/"
+    >JavaScript专题-防抖和节流</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" class="article-date">
+  <time datetime="2021-03-30T08:52:51.000Z" itemprop="datePublished">2021-03-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="防抖-debounce"><a href="#防抖-debounce" class="headerlink" title="防抖(debounce)"></a>防抖(debounce)</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>不管事件触发频率多高，一定在事件触发 n 秒后才执行，如果在一个事件触发的 n 秒内又触发了这个事件，就以新的事件的时间为准，n 秒后才执行。总之，触发完事件 n 秒内不再触发事件，n 秒后再执行。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>窗口大小变化，调整样式<br><code>window.addEventListener(&#39;resize&#39;, debounce(handleResize, 200))</code></li>
+<li>搜索框，输入后 1000ms 搜索<br><code>debounce(fetchSelectData, 300)</code></li>
+<li>表单验证，输入 1000ms 后验证<br><code>debounce(validator, 1000)</code></li>
+</ol>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function debounce(fn, time, flag) &#123;</span><br><span class="line">  var timer &#x3D; null</span><br><span class="line">  return function (...args) &#123;</span><br><span class="line">    clearTimeout(timer)</span><br><span class="line">    &#x2F;&#x2F; 当定时器变量timer为空时，说明是第一次执行，立即执行</span><br><span class="line">    if (flag &amp;&amp; !timer) &#123;</span><br><span class="line">      fn.apply(this, args)</span><br><span class="line">    &#125;</span><br><span class="line">    timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">      fn.apply(this, args)</span><br><span class="line">    &#125;, time);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>不管事件触发频率多高，只在单位时间内执行一次。</p>
+<h4 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h4><ol>
+<li>window.onresize()事件</li>
+<li>mousemove 事件</li>
+<li>上传进度</li>
+</ol>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><ol>
+<li><p>方案一：使用时间戳<br>第一次事件肯定触发，最后一次不会触发</p>
+<p>用时间戳判断是否已达到执行时间，记录上次执行的时间戳，然后每次触发事件执行回调，回调中判断当前时间戳距离上次执行时间戳的间隔是否已达到时间差，如果是则执行，并更新上次执行的时间戳，如此循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const throttle &#x3D; (fn, wait) &#x3D;&gt; &#123;</span><br><span class="line">    let previous &#x3D; 0</span><br><span class="line">    return function (...args) &#123;</span><br><span class="line">        let now &#x3D; +new Date()</span><br><span class="line">        if (now - previous &gt; wait) &#123;</span><br><span class="line">            previous &#x3D; now</span><br><span class="line">            fn.apply(this, args)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>方案二：使用定时器<br>第一次事件不会触发，最后一次一定触发</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function throttle(event, time) &#123;</span><br><span class="line"> let timer &#x3D; null</span><br><span class="line"> return function (...args) &#123;</span><br><span class="line">     if (!timer) &#123;</span><br><span class="line">         timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">             timer &#x3D; null</span><br><span class="line">             event.apply(this, args)</span><br><span class="line">         &#125;, time)</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>方案三：结合版</p>
+<p>定时器和时间戳的结合版，也相当于节流和防抖的结合版，第一次和最后一次都会触发</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function throttle(event, time) &#123;</span><br><span class="line">   let pre &#x3D; 0;</span><br><span class="line">   let timer &#x3D; null;</span><br><span class="line">   return function (...args) &#123;</span><br><span class="line">     if (Date.now() - pre &gt; time) &#123;</span><br><span class="line">       clearTimeout(timer);</span><br><span class="line">       timer &#x3D; null;</span><br><span class="line">       pre &#x3D; Date.now();</span><br><span class="line">       event.apply(this, args);</span><br><span class="line">     &#125; else if (!timer) &#123;</span><br><span class="line">       timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">         event.apply(this, args);</span><br><span class="line">       &#125;, time);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-JavaScript专题-柯里化"
   class="article article-type-post"
   itemscope
@@ -120,7 +193,11 @@
     <div class="article-meta">
       <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/" class="article-date">
   <time datetime="2021-03-30T06:26:54.000Z" itemprop="datePublished">2021-03-30</time>
-</a>    
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
