@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-     Hexo
+    JavaScript专题-手写深/浅拷贝 |  Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -38,67 +38,8 @@
     
       
     <main class="content on">
-      
-<section class="cover">
-    
-      
-      <a class="forkMe" href="https://github.com/Joyee"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/cover1.jpg" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">Hexo</a></h1>
-      <div id="subtitle-box">
-        
-        <span id="subtitle"></span>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-
-
-<!-- Subtitle -->
-
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['余生短暂，尽情折腾吧', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: false,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
+      <section class="outer">
+  <article
   id="post-JavaScript专题-手写深-浅拷贝"
   class="article article-type-post"
   itemscope
@@ -109,10 +50,9 @@
     
     <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/04/06/JavaScript%E4%B8%93%E9%A2%98-%E6%89%8B%E5%86%99%E6%B7%B1-%E6%B5%85%E6%8B%B7%E8%B4%9D/"
-    >JavaScript专题-手写深/浅拷贝</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  JavaScript专题-手写深/浅拷贝
+</h1>
  
 
     </header>
@@ -120,9 +60,34 @@
     <div class="article-meta">
       <a href="/2021/04/06/JavaScript%E4%B8%93%E9%A2%98-%E6%89%8B%E5%86%99%E6%B7%B1-%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="article-date">
   <time datetime="2021-04-06T03:07:29.000Z" itemprop="datePublished">2021-04-06</time>
-</a>    
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">16 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
       
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
   <h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><h3 id="方法一：Object-assign"><a href="#方法一：Object-assign" class="headerlink" title="方法一：Object.assign"></a>方法一：Object.assign</h3><ul>
@@ -218,648 +183,73 @@
     
     <footer class="article-footer">
        
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-算法思想"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/30/%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/"
-    >算法思想</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/30/%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/" class="article-date">
-  <time datetime="2021-03-30T10:13:22.000Z" itemprop="datePublished">2021-03-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><p>经典应用：霍夫曼编码（Huffman Coding）、Prim 和 Kruskal 最小生成树算法、还有 Dijkstra 单源最短路径算法</p>
-<h3 id="贪心算法解决问题的步骤"><a href="#贪心算法解决问题的步骤" class="headerlink" title="贪心算法解决问题的步骤"></a>贪心算法解决问题的步骤</h3><ol>
-<li><p>第一步，当我们看到这类问题的时候，首先要联想到贪心算法：针对一组数据，我们定义了限制值和期望值，希望从中选出几个数据，在满足限制值的情况下，期望值最大。</p>
-</li>
-<li><p>第二步，我们尝试看下这个问题是否可以用贪心算法解决：每次选择当前情况下，在对限制值同等贡献量的情况下，对期望值贡献最大的数据</p>
-</li>
-<li><p>第三步，我们举几个例子看下贪心算法产生的结果是否是最优的。</p>
-</li>
-</ol>
-<h2 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h2><h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2> 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-JavaScript专题-防抖和节流"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/"
-    >JavaScript专题-防抖和节流</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" class="article-date">
-  <time datetime="2021-03-30T08:52:51.000Z" itemprop="datePublished">2021-03-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="防抖-debounce"><a href="#防抖-debounce" class="headerlink" title="防抖(debounce)"></a>防抖(debounce)</h2><p>你尽管触发事件，但是我一定在事件触发 n 秒后才执行，如果你在一个事件触发的 n 秒内又触发了这个事件，那我就以新的事件的时间为准，n 秒后才执行，总之，就是要等你触发完事件 n 秒内不再触发事件，我才执行，真是任性呐!</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
-<li>窗口大小变化，调整样式<br><code>window.addEventListener(&#39;resize&#39;, debounce(handleResize, 200))</code></li>
-<li>搜索框，输入后 1000ms 搜索<br><code>debounce(fetchSelectData, 300)</code></li>
-<li>表单验证，输入 1000ms 后验证<br><code>debounce(validator, 1000)</code></li>
-<li>mousedown、mousemove</li>
-<li>keyup、keydown</li>
-</ol>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; index.html</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;zh-cmn-Hans&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;x-ua-compatible&quot; content&#x3D;&quot;IE&#x3D;edge, chrome&#x3D;1&quot;&gt;</span><br><span class="line">    &lt;title&gt;debounce&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        #container&#123;</span><br><span class="line">            width: 100%; height: 200px; line-height: 200px; text-align: center; color: #fff; background-color: #444; font-size: 30px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id&#x3D;&quot;container&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;debounce.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第一版"><a href="#第一版" class="headerlink" title="第一版"></a>第一版</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 第一版</span><br><span class="line">function debounce (func, wait &#x3D; 50) &#123;</span><br><span class="line">  var timeout</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    clearTimeout(timeout)</span><br><span class="line">    timeout &#x3D; setTimeout(fun, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var count &#x3D; 1;</span><br><span class="line">var container &#x3D; document.getElementById(&#39;container&#39;);</span><br><span class="line"></span><br><span class="line">function getUserAction() &#123;</span><br><span class="line">    container.innerHTML &#x3D; count++;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">container.onmousemove &#x3D; getUserAction;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用</span><br><span class="line">container.onmousemove &#x3D; debounce(getUserAction, 1000);</span><br></pre></td></tr></table></figure>
-
-<h4 id="第二版-this"><a href="#第二版-this" class="headerlink" title="第二版: this"></a>第二版: this</h4><p>在<code>getUserAction</code>里打印 this 不使用 debounce 的时候 打印的是 <div id="container"></div> ；使用 debounce，this 就会指向 Window 对象！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 修改后</span><br><span class="line">function debounce (func, wait &#x3D; 50) &#123;</span><br><span class="line">  var timeout</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    var context &#x3D; this</span><br><span class="line">    clearTimeout(timeout)</span><br><span class="line">    timeout &#x3D; setTimeout(function () &#123; func.apply(context) &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第三版-event-对象"><a href="#第三版-event-对象" class="headerlink" title="第三版: event 对象"></a>第三版: event 对象</h4><p>JavaScript 在事件处理函数中会提供事件对象 event</p>
-<p>不使用 debounce 的时候，这里会打印 MouseEvent 对象。但是在我们实现的 debounce 函数中，却只会打印 undefined!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function getUserAction(e) &#123;</span><br><span class="line">    console.log(e)</span><br><span class="line">    container.innerHTML &#x3D; count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>修改代后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait &#x3D; 50) &#123;</span><br><span class="line">  var timeout</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    var context &#x3D; this</span><br><span class="line">    var args &#x3D; arguments</span><br><span class="line"></span><br><span class="line">    clearTimeout(timeout)</span><br><span class="line">    timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">      func.apply(context, args)</span><br><span class="line">    &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第四版-立即执行"><a href="#第四版-立即执行" class="headerlink" title="第四版: 立即执行"></a>第四版: 立即执行</h4><p>有这样一个需求：我不希望非要等到事件停止触发后才执行，我希望立刻执行函数，然后等到停止触发 n 秒后，才可以重新触发执行。想想这个需求也是很有道理的嘛，那我们加个 immediate 参数判断是否是立刻执行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait &#x3D; 50, immediate) &#123;</span><br><span class="line">  var timeout</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    var contex &#x3D; this</span><br><span class="line">    var args &#x3D; arguments</span><br><span class="line"></span><br><span class="line">    if (timeout) clearTimeout(timeout)</span><br><span class="line"></span><br><span class="line">    if (immediate) &#123;</span><br><span class="line">      var callNow &#x3D; !timeout</span><br><span class="line">      timeout &#x3D; setTimeout(function() &#123;</span><br><span class="line">        timeout &#x3D; null</span><br><span class="line">      &#125;, wait)</span><br><span class="line"></span><br><span class="line">      if (callNow) func.apply(context, args)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">        func.apply(context, args)</span><br><span class="line">      &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第五版：返回值"><a href="#第五版：返回值" class="headerlink" title="第五版：返回值"></a>第五版：返回值</h4><p>getUserAction 函数可能是有返回值的，所以我们也要返回函数的执行结果，但是当 immediate 为 false 的时候，因为使用了 setTimeout ，我们将 func.apply(context, args) 的返回值赋给变量，最后再 return 的时候，值将会一直是 undefined，所以我们只在 immediate 为 true 的时候返回函数的执行结果。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 修改后</span><br><span class="line">function debounce(func, wait, immediate) &#123;</span><br><span class="line">  var timeout, result</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    var context &#x3D; this</span><br><span class="line">    var args &#x3D; arguments</span><br><span class="line"></span><br><span class="line">    if (timeout) clearTimeout(timeout)</span><br><span class="line">    if (immediate) &#123;</span><br><span class="line">      var callNow &#x3D; !timeout</span><br><span class="line">      timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">        timeout &#x3D; null</span><br><span class="line">      &#125;, wait)</span><br><span class="line"></span><br><span class="line">      if (callNow) result &#x3D; func.apply(context, args)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">        func.apply(context, args)</span><br><span class="line">      &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return result</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第六版：取消"><a href="#第六版：取消" class="headerlink" title="第六版：取消"></a>第六版：取消</h4><p>有这样的需求：我希望能取消 debounce 函数，比如说我 debounce 的时间间隔是 10 秒钟，immediate 为 true，这样的话，我只有等 10 秒后才能重新触发事件，现在我希望有一个按钮，点击后，取消防抖，这样我再去触发，就可以又立刻执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function debounce(func, wait, immediate) &#123;</span><br><span class="line">  var timeout, result</span><br><span class="line"></span><br><span class="line">  var debounced &#x3D; function () &#123;</span><br><span class="line">    var context &#x3D; this</span><br><span class="line">    var args &#x3D; arguments</span><br><span class="line"></span><br><span class="line">    if (timeout) clearTimeout(timeout)</span><br><span class="line">    if (immediate) &#123;</span><br><span class="line">      var callNow &#x3D; !timeout</span><br><span class="line">      timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">        timeout &#x3D; null</span><br><span class="line">      &#125;, wait)</span><br><span class="line"></span><br><span class="line">      if (callNow) result &#x3D; func.apply(context, args)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">        func.apply(context, args)</span><br><span class="line">      &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return result</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  debounced.cancel &#x3D; functon () &#123;</span><br><span class="line">    clearTimeout(timeout)</span><br><span class="line">    timeout &#x3D; null</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return debounced</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h2><h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>如果你持续触发事件，每隔一段时间，只执行一次事件。</p>
-<p>根据首次是否执行和结束后是否执行，效果不同。</p>
-<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><ol>
-<li>scroll 事件，每隔一秒计算一次位置信息等</li>
-<li>浏览器播放事件，每个一秒计算一次进度信息等</li>
-<li>input 框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求 (也可做防抖)</li>
-</ol>
-<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><p>主流方式有两种：时间戳，定时器</p>
-<h3 id="第一版：时间戳"><a href="#第一版：时间戳" class="headerlink" title="第一版：时间戳"></a>第一版：时间戳</h3><p>使用时间戳，当触发事件的时候，我们取出当前的时间戳，然后减去之前的时间戳(最一开始值设为 0 )，如果大于设置的时间周期，就执行函数，然后更新时间戳为当前的时间戳，如果小于，就不执行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function throttle(func, wait &#x3D; 50) &#123;</span><br><span class="line">  var previous &#x3D; 0</span><br><span class="line">  var context, args</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    var now &#x3D; +new Date()</span><br><span class="line">    args &#x3D; arguments</span><br><span class="line">    context &#x3D; this</span><br><span class="line">    if (now - previous &gt; wait) &#123;</span><br><span class="line">      func.apply(context, args)</span><br><span class="line">      previous &#x3D; now</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二版：定时器"><a href="#第二版：定时器" class="headerlink" title="第二版：定时器"></a>第二版：定时器</h3><p>当触发事件的时候，我们设置一个定时器，再触发事件的时候，如果定时器存在，就不执行，直到定时器执行，然后执行函数，清空定时器，这样就可以设置下个定时器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function throttle(func, wait) &#123;</span><br><span class="line">  var timeout</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    var context &#x3D; this</span><br><span class="line">    var args &#x3D; arguments</span><br><span class="line"></span><br><span class="line">    if (!timeout) &#123;</span><br><span class="line">      timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">        func.apply(context, args)</span><br><span class="line">        timeout &#x3D; null</span><br><span class="line">      &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三版：双剑合璧"><a href="#第三版：双剑合璧" class="headerlink" title="第三版：双剑合璧"></a>第三版：双剑合璧</h3><p>鼠标移入能立刻执行，停止触发的时候还能再执行一次</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function throttle(func, wait &#x3D; 50) &#123;</span><br><span class="line">  var timeout, context, args</span><br><span class="line">  var previous &#x3D; 0</span><br><span class="line"></span><br><span class="line">  return function () &#123;</span><br><span class="line">    args &#x3D; arguments</span><br><span class="line">    context &#x3D; this</span><br><span class="line">    var now &#x3D; +new Date()</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;下次触发 func 剩余的时间</span><br><span class="line">    var remaining &#x3D; wait - (now - previous)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 如果没有剩余的时间了或者你改了系统时间</span><br><span class="line">    if (remaining &lt;&#x3D; 0 || remaining &gt; wait) &#123;</span><br><span class="line">      if (timeout) &#123;</span><br><span class="line">        clearTimeout(timeout)</span><br><span class="line">        timeout &#x3D; null</span><br><span class="line">      &#125;</span><br><span class="line">      previous &#x3D; now</span><br><span class="line">      func.apply(context, args)</span><br><span class="line">    &#125; else if (!timeout) &#123;</span><br><span class="line">      timeout &#x3D; setTimeout(function () &#123;</span><br><span class="line">        timeout &#x3D; null</span><br><span class="line">        previous &#x3D; +new Date()</span><br><span class="line">        func.apply(context, args)</span><br><span class="line">      &#125;, remaining)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第四版：优化"><a href="#第四版：优化" class="headerlink" title="第四版：优化"></a>第四版：优化</h3> 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-JavaScript专题-柯里化"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/"
-    >JavaScript专题-柯里化</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/" class="article-date">
-  <time datetime="2021-03-30T06:26:54.000Z" itemprop="datePublished">2021-03-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>柯里化(Currying)是把接受多个参数的函数变成接受一个单一参数（最初函数的第一个参数）的函数，并且接受余下的参数且返回结果的新函数的技术。</p> 
-      <a class="article-more-link" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E6%9F%AF%E9%87%8C%E5%8C%96/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-JavaScript专题-异步循环打印"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0/"
-    >JavaScript专题-异步循环打印</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/30/JavaScript%E4%B8%93%E9%A2%98-%E5%BC%82%E6%AD%A5%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0/" class="article-date">
-  <time datetime="2021-03-30T05:26:40.000Z" itemprop="datePublished">2021-03-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var sleep &#x3D; function (time, i) &#123;</span><br><span class="line">    return new Promise(function (resolve, reject) &#123;</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">            resolve(i)</span><br><span class="line">        &#125;, time)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var start &#x3D; async function () &#123;</span><br><span class="line">    for (var i &#x3D; 0; i &lt; 6; i++) &#123;</span><br><span class="line">        let result &#x3D; await sleep(1000, i)</span><br><span class="line">        console.log(result)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">start()</span><br></pre></td></tr></table></figure> 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-JavaScript专题-手写call、apply、bind"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/29/JavaScript%E4%B8%93%E9%A2%98-%E6%89%8B%E5%86%99call%E3%80%81apply%E3%80%81bind/"
-    >JavaScript专题-手写call、apply、bind</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/29/JavaScript%E4%B8%93%E9%A2%98-%E6%89%8B%E5%86%99call%E3%80%81apply%E3%80%81bind/" class="article-date">
-  <time datetime="2021-03-29T09:27:42.000Z" itemprop="datePublished">2021-03-29</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript%E4%B8%93%E9%A2%98/">JavaScript专题</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h3 id="模拟实现-call"><a href="#模拟实现-call" class="headerlink" title="模拟实现 call"></a>模拟实现 call</h3><ol>
-<li>判断当前 this 是否为函数，防止 <code>Function.prototype.myCall()</code> 直接影响调用</li>
-<li>context 为可选参数，如果不传的话默认为上下文 window</li>
-<li>为 context 创建一个 Symbol(保证不会重名)属性，将当前函数赋值给这个属性</li>
-<li>处理参数，传入第一个参数后的其余参数</li>
-<li>调用函数后立即删除该 Symbol 属性</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myCall &#x3D; function (context, ...args) &#123;</span><br><span class="line">    if (this &#x3D;&#x3D;&#x3D; Function.prototype) &#123;</span><br><span class="line">        return undefined</span><br><span class="line">    &#125;</span><br><span class="line">    context &#x3D; context || window</span><br><span class="line">    const fn &#x3D; Symbol()</span><br><span class="line">    context[fn] &#x3D; this</span><br><span class="line">    const result &#x3D; context[fn](...args)</span><br><span class="line">    delete context[fn]</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">另一种写法</span><br><span class="line"></span><br><span class="line">Function.prototype.myCall &#x3D; function (context) &#123;</span><br><span class="line">    context &#x3D; context || window</span><br><span class="line">    context.fn &#x3D; this</span><br><span class="line"></span><br><span class="line">    var args &#x3D; []</span><br><span class="line">    for (var i &#x3D; 1; i &lt; arguments.length; i++) &#123;</span><br><span class="line">        args.push(&#39;arguments[&#39; + i + &#39;]&#39;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var result &#x3D; eval(&#39;context.fn(&#39;+ args+ &#39;)&#39;)</span><br><span class="line">    delete context.fn</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
-      <a class="article-more-link" href="/2021/03/29/JavaScript%E4%B8%93%E9%A2%98-%E6%89%8B%E5%86%99call%E3%80%81apply%E3%80%81bind/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-算法-排序"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"
-    >算法-排序</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time datetime="2021-03-29T07:21:30.000Z" itemprop="datePublished">2021-03-29</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p><img src="https://static001.geekbang.org/resource/image/fb/cd/fb8394a588b12ff6695cfd664afb17cd.jpg" alt="alt"></p>
-<p><img src="https://static001.geekbang.org/resource/image/1f/fd/1f6ef7e0a5365d6e9d68f0ccc71755fd.jpg" alt="alt"></p> 
-      <a class="article-more-link" href="/2021/03/29/%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-数据结构-数组"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84/"
-    >数据结构</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84/" class="article-date">
-  <time datetime="2021-03-29T06:03:21.000Z" itemprop="datePublished">2021-03-29</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h3><ol>
-<li>一组连续的内存空间</li>
-<li>存储相同类型的数据</li>
-<li>可以随机访问（根据下标随机访问的时间复杂度为 O(1)）<br>访问某个元素，该元素存储的的内存地址 <code>a[i]_address = base_address + i * data_type_size</code></li>
-</ol>
-<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><ol>
-<li><p>插入</p>
-<ul>
-<li>在数组的末尾插入元素，那就不需要移动数据了，这时的时间复杂度为 O(1)</li>
-<li>在数组的开头插入元素，那所有的数据都需要依次往后移动一位，所以最坏时间复杂度是 O(n), 因为我们在每个位置插入元素的概率是一样的，所以平均情况时间复杂度为 (1+2+…n)/n=O(n)。</li>
-</ul>
-</li>
-<li><p>删除</p>
-<ul>
-<li>如果删除数组末尾的数据，则最好情况时间复杂度为 O(1)；</li>
-<li>如果删除开头的数据，则最坏情况时间复杂度为 O(n)；</li>
-<li>平均情况时间复杂度也为 O(n)。</li>
-</ul>
-</li>
-<li><p>查询 O(1)</p>
-</li>
-</ol>
-<h3 id="链表-Linked-List"><a href="#链表-Linked-List" class="headerlink" title="链表(Linked List)"></a>链表(Linked List)</h3><p>经典链表使用场景: LRU(最近最少未使用算法) 缓存淘汰算法。</p>
-<p>缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的策略有三种：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
-<p>链表通过指针将一组零散的内存块串联在一起。其中，我们把内存块称为链表的“结点”。为了将所有的结点串起来，每个链表的结点除了存储数据之外，还需要记录链上的下一个结点的地址。如图所示，我们把这个记录下个结点地址的指针叫作后继指针 next。</p>
-<h4 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h4><p><img src="https://static001.geekbang.org/resource/image/b9/eb/b93e7ade9bb927baad1348d9a806ddeb.jpg" alt="alt"></p>
-<h5 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h5><ol>
-<li>插入- 只需要考虑相邻结点的指针改变 O(1)</li>
-<li>删除- 只需要考虑相邻结点的指针改变 O(1)</li>
-<li>查询 O(n)</li>
-</ol>
-<p><img src="https://static001.geekbang.org/resource/image/45/17/452e943788bdeea462d364389bd08a17.jpg" alt="alt"></p>
-<h5 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h5><p><img src="https://static001.geekbang.org/resource/image/86/55/86cb7dc331ea958b0a108b911f38d155.jpg" alt="alt"></p>
-<h4 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h4><p><img src="https://static001.geekbang.org/resource/image/cb/0b/cbc8ab20276e2f9312030c313a9ef70b.jpg" alt="alt"></p>
-<p>从结构上来看，双向链表可以支持 O(1) 时间复杂度的情况下找到前驱结点，正是这样的特点，也使双向链表在某些情况下的插入、删除等操作都要比单链表简单、高效。</p>
-<h5 id="双向循环链表"><a href="#双向循环链表" class="headerlink" title="双向循环链表"></a>双向循环链表</h5><p><img src="https://static001.geekbang.org/resource/image/d1/91/d1665043b283ecdf79b157cfc9e5ed91.jpg" alt="alt"></p>
-<h3 id="链表-VS-数组"><a href="#链表-VS-数组" class="headerlink" title="链表 VS 数组"></a>链表 VS 数组</h3><p><img src="https://static001.geekbang.org/resource/image/4f/68/4f63e92598ec2551069a0eef69db7168.jpg" alt="alt"></p>
-<h3 id="几个写链表代码技巧"><a href="#几个写链表代码技巧" class="headerlink" title="几个写链表代码技巧"></a>几个写链表代码技巧</h3><ol>
-<li><p>技巧一：理解指针或引用的含义</p>
-<p>引用或指针都是指存储所指对象的内存地址。</p>
-<p><code>p-&gt;next = q</code> p 结点的 next 指针中存储了 q 结点的内存地址。<br><code>p-&gt;next = q-&gt;next-&gt;next</code> p 结点的 next 指针存储了 p 结点的下下一个结点的内存地址</p>
-</li>
-<li><p>技巧二：警惕指针丢失和内存泄漏<br><img src="https://static001.geekbang.org/resource/image/05/6e/05a4a3b57502968930d517c934347c6e.jpg" alt="alt"></p>
-<ul>
-<li><p>插入结点时，一定要注意操作的顺序，要先将结点 x 的 next 指针指向结点 b，再把结点 a 的 next 指针指向结点 x，这样才不会丢失指针，导致内存泄漏。</p>
-</li>
-<li><p>删除链表结点时，也一定要记得手动释放内存空间，否则，也会出现内存泄漏的问题</p>
-</li>
-</ul>
-</li>
-<li><p>技巧三：利用哨兵简化实现难度<br>向一个空链表中插入第一个结点，刚刚的逻辑就不能用了。我们需要进行下面这样的特殊处理，其中 head 表示链表的头结点。对于单链表的插入操作，第一个结点和其他结点的插入逻辑是不一样的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (head &#x3D;&#x3D; null) &#123;</span><br><span class="line">head &#x3D; new_node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>单链表结点删除操作</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">删除结点p的后继节点: p-&gt;next &#x3D; p-&gt;next-&gt;next</span><br></pre></td></tr></table></figure>
-
-<p>如果删除的是链表最后一个结点，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (head-&gt;next &#x3D;&#x3D; null) &#123;</span><br><span class="line">head &#x3D; null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>引入哨兵结点，在任何时候，不管链表是不是空，head 指针都会一直指向这个哨兵结点。我们也把这种有哨兵结点的链表叫带头链表。相反，没有哨兵结点的链表就叫作不带头链表。</p>
-<p><img src="https://static001.geekbang.org/resource/image/7d/c7/7d22d9428bdbba96bfe388fe1e3368c7.jpg" alt="alt"></p>
-</li>
-<li><p>技巧四：重点留意边界条件处理</p>
-<p>用来检查链表代码是否正确的边界条件有这样几个：</p>
-<ul>
-<li>如果链表为空时，代码是否能正常工作？</li>
-<li>如果链表只包含一个结点时，代码是否能正常工作？</li>
-<li>如果链表只包含两个结点时，代码是否能正常工作？</li>
-<li>代码逻辑在处理头结点和尾结点的时候，是否能正常工作？</li>
-</ul>
-</li>
-<li><p>技巧五：举例画图，辅助思考</p>
-</li>
-<li><p>技巧六：多写多练，没有捷径</p>
-<p>常见链表操作</p>
-<ul>
-<li>单链表反转</li>
-<li>链表中环的检测</li>
-<li>两个有序的链表合并</li>
-<li>删除链表倒数第 n 个结点</li>
-<li>求链表的中间结点</li>
-</ul>
-</li>
-</ol>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-时间空间复杂度"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/29/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"
-    >时间空间复杂度</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/29/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="article-date">
-  <time datetime="2021-03-29T05:21:35.000Z" itemprop="datePublished">2021-03-29</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构,算法</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><h4 id="如何分析一段代码的时间复杂度"><a href="#如何分析一段代码的时间复杂度" class="headerlink" title="如何分析一段代码的时间复杂度"></a>如何分析一段代码的时间复杂度</h4><ol>
-<li><p>只关注循环执行次数最多的一段代码 （忽略常量、低阶、系数）</p>
-</li>
-<li><p>加法法则：总复杂度等于量级最大的那段代码的复杂度<br><code>如果 T1(n)=O(f(n))，T2(n)=O(g(n))；那么 T(n)=T1(n)+T2(n)=max(O(f(n)), O(g(n))) = O(max(f(n), g(n))).</code></p>
-</li>
-<li><p>乘法法则：嵌套代码的复杂度等于嵌套内外的代码复杂度的乘积<br><code>如果 T1(n)=O(f(n))，T2(n)=O(g(n))；那么 T(n)=T1(n)*T2(n)=O(f(n))*O(g(n))=O(f(n) * g(n)).</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int cal(int n) &#123;</span><br><span class="line">int ret &#x3D; 0;</span><br><span class="line">int i &#x3D; 1;</span><br><span class="line">for (; i &lt; n; ++i) &#123;</span><br><span class="line">    ret &#x3D; ret + f(i);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int f(int n) &#123;</span><br><span class="line">int sum &#x3D; 0;</span><br><span class="line">int i &#x3D; 1;</span><br><span class="line">for (; i &lt; n; ++i) &#123;</span><br><span class="line">    sum &#x3D; sum + i;</span><br><span class="line">&#125;</span><br><span class="line">return sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>分析: 单独看 cal() 函数。假设 f() 只是一个普通的操作，那第 4 ～ 6 行的时间复杂度就是，T1(n) = O(n)。但 f() 函数本身不是一个简单的操作，它的时间复杂度是 T2(n) = O(n)，所以，整个 cal() 函数的时间复杂度就是，T(n) = T1(n) * T2(n) = O(n*n) = O(n2)。</p>
-</li>
-</ol> 
-      <a class="article-more-link" href="/2021/03/29/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-渲染流程"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/25/%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B/"
-    >渲染流程</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/25/%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B/" class="article-date">
-  <time datetime="2021-03-25T06:31:39.000Z" itemprop="datePublished">2021-03-25</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>构建 DOM -&gt; 样式计算 -&gt; 布局阶段 -&gt; 分层 -&gt; 图层绘制 -&gt; 分块 -&gt; 光栅化 -&gt; 合成</p> 
-      <a class="article-more-link" href="/2021/03/25/%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-  </article>
-  
-
-  
-  <nav class="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
-  </nav>
-  
-</section>
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
 </div>
 
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://joyee.github.io/2021/04/06/JavaScript%E4%B8%93%E9%A2%98-%E6%89%8B%E5%86%99%E6%B7%B1-%E6%B5%85%E6%8B%B7%E8%B4%9D/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/03/30/%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">算法思想</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
+</section>
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -985,6 +375,23 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
